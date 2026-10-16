@@ -293,11 +293,19 @@ Navigate to `http://localhost:5173` in your browser.
 - **MITRE ATT&CK Matrix**: Observed technique volume distribution (`T1190`, `T1105`, `T1486`, `T1071.001`, `T1110`).
 - **Targeted Vendors & Origin Countries**: Surface CISA KEV vendor concentrations and geo-origin distribution.
 
+### Strategic Executive View
+> High-level telemetry KPIs, severity distributions, top targeted vendors, and threat origin analytics.
+![Executive Dashboard](assets/executive-dashboard.png)
+
 ### 2. SOC Analyst Tactical Workbench
 - **Sub-Second Multi-Filtering**: Full-text debounced search across values, threat types, and tags; filterable by severity, IoC type, and MITRE technique.
 - **Bulk IOC Triage Modal**: Ingests up to 50 observables pasted from incident tickets or SIEM alerts, partitioning them into known malicious indicators vs. clean items.
 - **Slide-Over Enrichment Drawer**: Click any indicator to inspect transparent scoring progress bars, deep links to MITRE ATT&CK documentation, related attack campaign assets, and raw JSON telemetry.
 - **SIEM Export**: Instant CSV and JSON downloads preserving active filter criteria for firewall or EDR blocklist deployment.
+
+### Tactical SOC Analyst Workbench
+> Real-time threat hunting, multi-parameter filtering, atomic IOC lookup, and SIEM exports.
+![SOC Analyst Workbench](assets/soc-workbench.png)
 
 ---
 
