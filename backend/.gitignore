@@ -1,0 +1,26 @@
+# Python / FastAPI Backend
+backend/__pycache__/
+backend/venv/
+backend/.env
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+backend/instance/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / React Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.production.local
+frontend/.env.test.local
+
+# Docker & Environment
+.env
+.DS_Store
+Thumbs.db
+*.log

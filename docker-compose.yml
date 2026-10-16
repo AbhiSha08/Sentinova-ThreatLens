@@ -1,0 +1,66 @@
+services:
+  # ── 1. Redis Caching Layer ──────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: threatlens-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - threatlens-net
+
+  # ── 2. ThreatLens FastAPI Backend ───────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: threatlens-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./threatlens.db
+      - REDIS_URL=redis://redis:6379/0
+      - CISA_KEV_URL=https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+      - URLHAUS_RECENT_URL=https://urlhaus-api.abuse.ch/v1/urls/recent/
+      - ABUSEIPDB_API_KEY=
+      - OTX_API_KEY=
+    volumes:
+      - threatlens_data:/app
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - threatlens-net
+
+  # ── 3. ThreatLens React 18 + Vite Frontend ───────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: threatlens-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - threatlens-net
+
+volumes:
+  redis_data:
+    name: threatlens_redis_data
+  threatlens_data:
+    name: threatlens_sqlite_data
+
+networks:
+  threatlens-net:
+    name: threatlens_network
+    driver: bridge

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+threatlens.db
+threatlens.db-journal
+threatlens.db-wal
+threatlens.db-shm
+test_phase3.py
+.pytest_cache/
