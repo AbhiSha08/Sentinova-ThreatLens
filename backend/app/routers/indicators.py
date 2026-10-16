@@ -1,7 +1,7 @@
 """
 app/routers/indicators.py
 ─────────────────────────
-SOC Analyst tactical IOC router for ThreatLens.
+SOC Analyst tactical IOC router for Sentinova ThreatLens.
 
 Endpoints:
   • GET  /indicators               Paginated, filterable, sortable IOC table
@@ -85,7 +85,7 @@ async def lookup_indicator(
     if not indicator:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Indicator '{val}' not found in ThreatLens threat database.",
+            detail=f"Indicator '{val}' not found in Sentinova ThreatLens threat database.",
         )
 
     # Recalculate transparent score breakdown
@@ -245,7 +245,7 @@ def export_indicators(
         return Response(
             content=csv_content,
             media_type="text/csv",
-            headers={"Content-Disposition": "attachment; filename=threatlens_indicators.csv"},
+            headers={"Content-Disposition": "attachment; filename=sentinova_threatlens_indicators.csv"},
         )
 
     # JSON export

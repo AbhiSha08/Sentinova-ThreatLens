@@ -1,4 +1,4 @@
-# 🛡️ ThreatLens — Cyber Threat Intelligence (CTI) Platform
+# 🛡️ Sentinova ThreatLens — Cyber Threat Intelligence (CTI) Platform
 
 [![Python](https://img.shields.io/badge/Python-3.14%20%7C%203.12-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.143.2-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -7,7 +7,7 @@
 [![Docker](https://img.shields.io/badge/Docker-Compose%20Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**ThreatLens** is an enterprise-grade Cyber Threat Intelligence (CTI) aggregation, risk-scoring, and visualization platform. Designed specifically for security operations centers (SOCs) and cybersecurity leadership, ThreatLens continuously ingests raw threat indicators from authoritative global feeds, normalizes them into atomic Indicators of Compromise (IoCs), executes an explainable multi-factor risk scoring engine, maps observables to the **MITRE ATT&CK® framework**, and serves both tactical analysts and executive stakeholders through a unified cyber-dark dual-mode interface.
+**Sentinova ThreatLens** is an enterprise-grade Cyber Threat Intelligence (CTI) aggregation, risk-scoring, and visualization platform. Designed specifically for security operations centers (SOCs) and cybersecurity leadership, Sentinova ThreatLens continuously ingests raw threat indicators from authoritative global feeds, normalizes them into atomic Indicators of Compromise (IoCs), executes an explainable multi-factor risk scoring engine, maps observables to the **MITRE ATT&CK® framework**, and serves both tactical analysts and executive stakeholders through a unified cyber-dark dual-mode interface.
 
 ---
 
@@ -30,7 +30,7 @@
 
 ## 🏛️ Architectural Overview
 
-ThreatLens bridges the gap between raw threat telemetry and operational cyber defense. Threat intelligence feeds frequently output unstructured, unranked, and duplicate data that overwhelms SOC tier-1 analysts. ThreatLens solves this via:
+Sentinova ThreatLens bridges the gap between raw threat telemetry and operational cyber defense. Threat intelligence feeds frequently output unstructured, unranked, and duplicate data that overwhelms SOC tier-1 analysts. Sentinova ThreatLens solves this via:
 
 1. **Autonomous Feed Ingestion**: Asynchronously harvests indicators across CISA Known Exploited Vulnerabilities (KEV), URLhaus (malware distribution and C2), and AbuseIPDB (malicious IPs and brute-force scanners).
 2. **Deterministic Natural Deduplication**: Upserts records onto natural composite keys `(value, ioc_type)`, tracking recency decay and merging threat context.
@@ -60,7 +60,7 @@ flowchart TD
         ABUSE[AbuseIPDB Blacklist]
     end
 
-    subgraph IngestionPipeline[ThreatLens Ingestion Engine]
+    subgraph IngestionPipeline[Sentinova ThreatLens Ingestion Engine]
         SCHED[APScheduler Background Worker]
         INGEST[Async Feed Ingesters]
         RAW[(RawFeedEntry Audit Store)]
@@ -69,7 +69,7 @@ flowchart TD
     end
 
     subgraph Storage[Data & Caching Layer]
-        DB[(ThreatLens SQLite WAL / PostgreSQL)]
+        DB[(Sentinova ThreatLens SQLite WAL / PostgreSQL)]
         REDIS[(Redis 7.0 / In-Memory Fallback)]
     end
 
@@ -106,7 +106,7 @@ flowchart TD
 
 ## 🧮 Risk Scoring & MITRE Engine
 
-The ThreatLens scoring algorithm calculates an audit-ready, explainable composite score:
+The Sentinova ThreatLens scoring algorithm calculates an audit-ready, explainable composite score:
 
 $$\text{Composite Score} = (\text{Source Weight} \times 0.40) + (\text{Context Bonus} \times 0.35) + (\text{Recency Factor} \times 25.0)$$
 
@@ -145,7 +145,7 @@ $$\text{Composite Score} = (\text{Source Weight} \times 0.40) + (\text{Context B
 ## 📂 Repository Structure
 
 ```text
-Threatlens/
+Sentinova-ThreatLens/
 ├── docker-compose.yml              # Production container orchestration
 ├── README.md                       # Architecture & deployment documentation
 ├── backend/
@@ -230,8 +230,8 @@ Run the entire stack (FastAPI Backend, Redis Caching, Nginx React Frontend) with
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/threatlens.git
-cd threatlens
+git clone https://github.com/your-username/sentinova-threatlens.git
+cd sentinova-threatlens
 
 # Launch all containers
 docker compose up --build -d
@@ -311,11 +311,11 @@ Navigate to `http://localhost:5173` in your browser.
 
 ## 👨‍💻 Author & Security Profile
 
-**ThreatLens** was engineered by **Abhijeet Sharma** as a demonstration of production-grade Cyber Threat Intelligence engineering, deterministic risk analysis, and full-stack cybersecurity application architecture.
+**Sentinova ThreatLens** was engineered by **Abhijeet Sharma** as a demonstration of production-grade Cyber Threat Intelligence engineering, deterministic risk analysis, and full-stack cybersecurity application architecture.
 
 - **Focus Areas**: Cyber Threat Intelligence (CTI), Detection Engineering, Threat Hunting, Full-Stack Python/React Systems.
 - **Connect**: [LinkedIn](https://linkedin.com) • [GitHub](https://github.com) • [Security Portfolio](https://github.com)
 
 ---
 
-*ThreatLens is distributed under the MIT License.*
+*Sentinova ThreatLens is distributed under the MIT License.*

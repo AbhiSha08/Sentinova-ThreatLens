@@ -1,7 +1,7 @@
 """
 app/services/ingester.py
 ────────────────────────
-Async threat feed ingesters for ThreatLens.
+Async threat feed ingesters for Sentinova ThreatLens.
 
 Sources:
   1. CISA KEV  — zero-key JSON feed
@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 
 # ── HTTP client defaults ───────────────────────────────────────────────────────
 _TIMEOUT = httpx.Timeout(15.0, connect=5.0)
-_HEADERS = {"User-Agent": "ThreatLens-CTI/1.0 (research; contact@threatlens.local)"}
+_HEADERS = {"User-Agent": "Sentinova-ThreatLens-CTI/1.0 (research; contact@sentinova.local)"}
 _MAX_RETRIES = 2
 
 # ── Feed registry ──────────────────────────────────────────────────────────────

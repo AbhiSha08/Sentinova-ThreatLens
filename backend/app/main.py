@@ -40,14 +40,14 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     # ── Shutdown ───────────────────────────────────────────────────────────────
     scheduler_shutdown()
     await close_cache()
-    logger.info("ThreatLens shutting down.")
+    logger.info("Sentinova ThreatLens shutting down.")
 
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
     description=(
-        "ThreatLens Cyber Threat Intelligence aggregation and visualization platform. "
+        "Sentinova ThreatLens Cyber Threat Intelligence aggregation and visualization platform. "
         "Aggregates IoCs from CISA KEV, URLhaus, AbuseIPDB, OTX, and more."
     ),
     docs_url=f"{settings.API_V1_STR}/docs",

@@ -54,7 +54,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-slate-950 py-6 text-center text-xs font-mono text-slate-500">
-        <p>ThreatLens Cyber Threat Intelligence Fusion Platform • Python 3.14 + FastAPI + React 18 + Tailwind CSS</p>
+        <p>Sentinova ThreatLens Cyber Threat Intelligence Fusion Platform • Python 3.14 + FastAPI + React 18 + Tailwind CSS</p>
       </footer>
 
       {/* Slide-over IOC Enrichment Drawer */}

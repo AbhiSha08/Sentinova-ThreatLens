@@ -1,5 +1,5 @@
 # ==============================================================================
-# ThreatLens Frontend Dockerfile (Multi-stage Production Build)
+# Sentinova ThreatLens Frontend Dockerfile (Multi-stage Production Build)
 # Stage 1: Build React 18 + Vite production bundle
 # Stage 2: Serve optimized static assets via Nginx Alpine reverse proxy
 # ==============================================================================

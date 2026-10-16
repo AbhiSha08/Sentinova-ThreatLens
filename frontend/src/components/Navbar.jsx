@@ -83,11 +83,12 @@ export default function Navbar({ activeView, setActiveView, onSyncCompleted, onO
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-                <span className="text-base sm:text-lg font-bold tracking-tight text-white font-mono truncate">
-                  THREAT<span className="text-cyan-400">LENS</span>
+                <span className="text-base sm:text-lg font-bold tracking-tight text-white font-mono truncate flex items-center gap-1.5">
+                  <span className="text-cyan-400 font-extrabold tracking-wide">SENTINOVA</span>
+                  <span className="text-white">THREAT<span className="text-cyan-400">LENS</span></span>
                 </span>
                 <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-semibold tracking-wider shrink-0">
-                  v{backendStatus.version}
+                  CTI v{backendStatus.version}
                 </span>
               </div>
               <p className="text-[10px] sm:text-[11px] text-slate-400 hidden sm:block truncate">

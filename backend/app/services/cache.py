@@ -1,7 +1,7 @@
 """
 app/services/cache.py
 ─────────────────────
-Resilient caching layer for ThreatLens.
+Resilient caching layer for Sentinova ThreatLens.
 
 Supports Redis via `redis.asyncio` with seamless, zero-crash graceful
 degradation to an in-memory TTL dictionary cache when Redis is unavailable.

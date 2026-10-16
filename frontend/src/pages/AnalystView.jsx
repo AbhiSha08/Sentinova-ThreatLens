@@ -177,7 +177,7 @@ export default function AnalystView({ initialFilters, onInspectIndicator, onOpen
           {/* Export CSV */}
           <a
             href={exportIndicatorsUrl(currentFilterParams, 'csv')}
-            download="threatlens_indicators.csv"
+            download="sentinova_threatlens_indicators.csv"
             className="flex items-center justify-center gap-1.5 px-3.5 py-2.5 min-h-[42px] rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 text-xs font-medium text-slate-300 active:scale-95 transition-all"
           >
             <FileSpreadsheet className="w-4 h-4 text-emerald-400" />
@@ -187,7 +187,7 @@ export default function AnalystView({ initialFilters, onInspectIndicator, onOpen
           {/* Export JSON */}
           <a
             href={exportIndicatorsUrl(currentFilterParams, 'json')}
-            download="threatlens_indicators.json"
+            download="sentinova_threatlens_indicators.json"
             className="flex items-center justify-center gap-1.5 px-3.5 py-2.5 min-h-[42px] rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 text-xs font-medium text-slate-300 active:scale-95 transition-all"
           >
             <FileCode className="w-4 h-4 text-blue-400" />

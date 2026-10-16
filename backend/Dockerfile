@@ -1,5 +1,5 @@
 # ==============================================================================
-# ThreatLens Backend Dockerfile
+# Sentinova ThreatLens Backend Dockerfile
 # Lightweight Python 3.12-slim base image for high-performance CTI processing
 # ==============================================================================
 

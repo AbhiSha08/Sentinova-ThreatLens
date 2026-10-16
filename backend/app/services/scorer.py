@@ -1,7 +1,7 @@
 """
 app/services/scorer.py
 ─────────────────────
-Deterministic, explainable risk scoring engine for ThreatLens.
+Deterministic, explainable risk scoring engine for Sentinova ThreatLens.
 
 Composite score formula (0.0 – 100.0):
   40% → Source Reliability / Feed Base Weight (max 40 pts)

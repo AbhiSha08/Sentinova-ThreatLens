@@ -1,7 +1,7 @@
 """
 test_phase3.py
 ──────────────
-Complete Phase 3 Verification Suite for ThreatLens.
+Complete Phase 3 Verification Suite for Sentinova ThreatLens.
 Tests:
   1. Module imports and Python 3.14 compatibility
   2. Cache layer (in-memory TTL fallback & prefix invalidation)
@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 async def run_verification():
     print("==================================================================")
-    print(" ThreatLens Phase 3 Verification Suite")
+    print(" Sentinova ThreatLens Phase 3 Verification Suite")
     print("==================================================================")
 
     # ── Step 1: Import check ───────────────────────────────────────────────────

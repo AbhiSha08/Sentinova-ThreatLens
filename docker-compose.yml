@@ -2,7 +2,7 @@ services:
   # ── 1. Redis Caching Layer ──────────────────────────────────────────────────
   redis:
     image: redis:7-alpine
-    container_name: threatlens-redis
+    container_name: sentinova-threatlens-redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -14,14 +14,14 @@ services:
       timeout: 3s
       retries: 5
     networks:
-      - threatlens-net
+      - sentinova-threatlens-net
 
-  # ── 2. ThreatLens FastAPI Backend ───────────────────────────────────────────
+  # ── 2. Sentinova ThreatLens FastAPI Backend ─────────────────────────────────
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: threatlens-backend
+    container_name: sentinova-threatlens-backend
     restart: unless-stopped
     ports:
       - "8000:8000"
@@ -38,29 +38,29 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - threatlens-net
+      - sentinova-threatlens-net
 
-  # ── 3. ThreatLens React 18 + Vite Frontend ───────────────────────────────────
+  # ── 3. Sentinova ThreatLens React 18 + Vite Frontend ─────────────────────────
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: threatlens-frontend
+    container_name: sentinova-threatlens-frontend
     restart: unless-stopped
     ports:
       - "5173:80"
     depends_on:
       - backend
     networks:
-      - threatlens-net
+      - sentinova-threatlens-net
 
 volumes:
   redis_data:
-    name: threatlens_redis_data
+    name: sentinova_threatlens_redis_data
   threatlens_data:
-    name: threatlens_sqlite_data
+    name: sentinova_threatlens_sqlite_data
 
 networks:
-  threatlens-net:
-    name: threatlens_network
+  sentinova-threatlens-net:
+    name: sentinova_threatlens_network
     driver: bridge

@@ -1,7 +1,7 @@
 """
 app/routers/analytics.py
 ────────────────────────
-Executive & Threat Landscape Analytics router for ThreatLens.
+Executive & Threat Landscape Analytics router for Sentinova ThreatLens.
 
 Provides high-level KPIs, severity distribution, MITRE ATT&CK breakdown,
 vendor exposure metrics, and country origin heatmaps for executive and SOC lead dashboards.
